@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.design_patterns.R;
 
-public class FreteAcitivy extends AppCompatActivity {
+public class FreteActivity extends AppCompatActivity {
 
     private FreteViewHolder holder;
 

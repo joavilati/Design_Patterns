@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.design_patterns.strategy.frete.FreteAcitivy;
+import com.example.design_patterns.strategy.frete.FreteActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void irParaFrete(){
-        startActivity(new Intent(this, FreteAcitivy.class));
+        startActivity(new Intent(this, FreteActivity.class));
     }
 }

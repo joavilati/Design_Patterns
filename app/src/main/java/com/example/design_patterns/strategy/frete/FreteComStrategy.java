@@ -8,8 +8,7 @@ public class FreteComStrategy {
         this.tipoFrete = tipoFrete;
     }
 
-    public double calcularFrete(int distancia) {
+    public double calcularPreco(int distancia) {
         return tipoFrete.calcularPreco(distancia);
     }
-
 }

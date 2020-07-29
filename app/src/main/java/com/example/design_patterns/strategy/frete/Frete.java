@@ -2,20 +2,19 @@ package com.example.design_patterns.strategy.frete;
 
 public class Frete {
 
-    private TipoFrete tipo;
+    private int tipo;
 
-    public Frete(TipoFrete tipo) {
+    public Frete(int tipo) {
         this.tipo = tipo;
     }
 
     public double calcularPreco(int distancia) {
         double preco = 0;
-        if (TipoFrete.NORMAL.equals(tipo)) {
+        if (tipo == TipoFrete.NORMAL) {
             preco = distancia * 1.25 + 10;
-        } else if (TipoFrete.SEDEX.equals(tipo)) {
+        } else if (tipo == TipoFrete.SEDEX) {
             preco = distancia * 1.45 + 12;
         }
-
         return preco;
     }
 
