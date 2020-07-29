@@ -1,4 +1,4 @@
-package com.example.design_patterns.strategy;
+package com.example.design_patterns.strategy.frete;
 
 public class Frete {
 
