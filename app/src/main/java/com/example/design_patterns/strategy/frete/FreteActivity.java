@@ -25,6 +25,7 @@ public class FreteActivity extends AppCompatActivity {
     }
 
     private void clicksDosBotoes() {
+        // Declarando os listeners do click dos botões
 
         holder.btnNormal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +45,19 @@ public class FreteActivity extends AppCompatActivity {
     }
 
     private void inserirValorFinal() {
+
+        // Pegando o valor de distancia digitado
         int distancia = Integer.parseInt(holder.etDistancia.getText().toString());
+
+        // Pegando o valor final e passando para tipo String
         String valorFinal = String.valueOf(frete.calcularPreco(distancia));
+
+        // Inserindo o valor final na View(elemento) de Valor Final
         holder.tvValotFinal.setText(valorFinal) ;
     }
 
     class FreteViewHolder {
+        // Pegando as Views(Elementos) no xml e criando elas no codigo.
         private Button btnSedex = findViewById(R.id.btn_sedex);
         private Button btnNormal = findViewById(R.id.btn_normal);
         private EditText etDistancia = findViewById(R.id.et_distancia);
