@@ -13,14 +13,13 @@ import com.example.design_patterns.R;
 public class FreteActivity extends AppCompatActivity {
 
     private FreteViewHolder holder;
-
-    private Frete frete;
+    private FreteComStrategy frete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frete_acitivy);
-        holder  = new FreteViewHolder();
+        holder = new FreteViewHolder();
         clicksDosBotoes();
     }
 
@@ -30,7 +29,7 @@ public class FreteActivity extends AppCompatActivity {
         holder.btnNormal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                frete = new Frete(TipoFrete.NORMAL);
+                frete = new FreteComStrategy(new Normal());
                 inserirValorFinal();
             }
         });
@@ -38,7 +37,7 @@ public class FreteActivity extends AppCompatActivity {
         holder.btnSedex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                frete = new Frete(TipoFrete.SEDEX);
+                frete = new FreteComStrategy(new Sedex());
                 inserirValorFinal();
             }
         });
@@ -61,6 +60,6 @@ public class FreteActivity extends AppCompatActivity {
         private Button btnSedex = findViewById(R.id.btn_sedex);
         private Button btnNormal = findViewById(R.id.btn_normal);
         private EditText etDistancia = findViewById(R.id.et_distancia);
-        private TextView tvValotFinal = findViewById(R.id.tv_label_valor_final);
+        private TextView tvValotFinal = findViewById(R.id.tv_resuldado);
     }
 }

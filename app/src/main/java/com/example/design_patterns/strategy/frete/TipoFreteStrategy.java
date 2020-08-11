@@ -5,7 +5,6 @@ public interface TipoFreteStrategy {
 }
 
 class Normal implements TipoFreteStrategy {
-
     @Override
     public double calcularPreco(double distancia) {
         return distancia * 1.25 + 10;
@@ -13,7 +12,6 @@ class Normal implements TipoFreteStrategy {
 }
 
 class Sedex implements TipoFreteStrategy {
-
     @Override
     public double calcularPreco(double distancia) {
         return distancia * 1.45 + 12;
