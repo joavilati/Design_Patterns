@@ -1,7 +1,5 @@
 package com.example.design_patterns.template_method.locadoras;
 
-import androidx.annotation.Nullable;
-
 import com.example.design_patterns.template_method.Carro;
 
 import java.util.Random;
@@ -22,7 +20,7 @@ public class Loucarros extends Locadora {
 
     @Override
     protected double calcularSeguro() {
-        return (sorte != -1)? 2 * sorte: 2 * tentarASorte();
+        return (sorte != -1) ? 2 * sorte : 2 * tentarASorte();
     }
 
     @Override
@@ -30,7 +28,7 @@ public class Loucarros extends Locadora {
         return diasLuaEmSaturno;
     }
 
-    private double tentarASorte(){
+    private double tentarASorte() {
         Random random = new Random();
         sorte = random.nextDouble() * random.nextInt(30);
         return sorte;
