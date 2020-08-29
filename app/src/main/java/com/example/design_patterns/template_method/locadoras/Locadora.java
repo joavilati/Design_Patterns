@@ -7,15 +7,20 @@ public abstract class Locadora {
     private double valorTotal;
     private double valorSeguro = 0;
 
+    public final static String TIPO_CARRO = "com.example.design_patterns.template_method.locadoras.TIPO_CARRO";
+
     public Locadora(Carro carro) {
         this.carro = carro;
     }
+
 
     protected abstract double getValorFranquiaBase();
 
     protected abstract double calcularSeguro();
 
     protected  abstract double getValorKmBase();
+
+    public abstract String getName();
 
     public void criarContrato(int dias) {
         calcularValorKm();

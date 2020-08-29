@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".template_method.AluguelCarrosActivity"></activity>
+        <activity android:name=".template_method.ContratosActivity"></activity>
+        <activity android:name=".template_method.AluguelCarrosActivity" />
         <activity android:name=".strategy.frete.FreteActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

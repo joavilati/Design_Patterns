@@ -28,6 +28,11 @@ public class Loucarros extends Locadora {
         return diasLuaEmSaturno;
     }
 
+    @Override
+    public String getName() {
+        return "Loucarros";
+    }
+
     private double tentarASorte() {
         Random random = new Random();
         sorte = random.nextDouble() * random.nextInt(30);

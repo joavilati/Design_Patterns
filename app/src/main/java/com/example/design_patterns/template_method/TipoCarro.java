@@ -1,7 +1,9 @@
 package com.example.design_patterns.template_method;
 
-public enum TipoCarro {
-    POPULAR{
+import java.io.Serializable;
+
+public enum TipoCarro implements Serializable {
+    POPULAR {
         @Override
         public Carro carroBuilder() {
             return new Carro(1.0);

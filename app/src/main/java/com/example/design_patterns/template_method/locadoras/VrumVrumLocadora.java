@@ -27,4 +27,9 @@ public class VrumVrumLocadora extends  Locadora{
     protected double getValorKmBase() {
         return manutencao + impostos + lucro;
     }
+
+    @Override
+    public String getName() {
+        return "VrumVrumLocadora";
+    }
 }

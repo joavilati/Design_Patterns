@@ -25,6 +25,11 @@ public class Locarro extends Locadora {
         return 13.0 * descontar();
     }
 
+    @Override
+    public String getName() {
+        return "Locarros";
+    }
+
     private double descontar() {
         return (descontavel)? desconto : 1;
     }
