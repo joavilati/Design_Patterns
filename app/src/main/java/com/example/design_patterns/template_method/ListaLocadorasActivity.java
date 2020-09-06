@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 import static com.example.design_patterns.template_method.locadoras.Locadora.TIPO_CARRO;
 
-public class ListaContratosActivity extends AppCompatActivity {
+public class ListaLocadorasActivity extends AppCompatActivity {
 
     private ActivityContratosBinding binding;
     TipoCarro tipoCarro;
-    private ContratosAdapter adapter;
+    private LocadorasAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class ListaContratosActivity extends AppCompatActivity {
         locadoras.add(new Locarro(carro));
         locadoras.add(new Loucarros(carro));
         locadoras.add(new VrumVrumLocadora(carro));
-        adapter = new ContratosAdapter(locadoras);
+        adapter = new LocadorasAdapter(locadoras);
         binding.rvContratos.setLayoutManager(new LinearLayoutManager(this));
         binding.rvContratos.setAdapter(adapter);
     }

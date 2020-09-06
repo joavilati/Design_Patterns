@@ -47,7 +47,7 @@ public class AluguelCarrosActivity extends AppCompatActivity {
     }
 
     private void goToContratActivity(TipoCarro tipo) {
-        Intent intent = new Intent(this, ListaContratosActivity.class);
+        Intent intent = new Intent(this, ListaLocadorasActivity.class);
         intent.putExtra(TIPO_CARRO, tipo);
         startActivity(intent);
     }

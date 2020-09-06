@@ -7,30 +7,30 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.design_patterns.databinding.ItemContratoBinding;
+import com.example.design_patterns.databinding.ItemLocadoraBinding;
 import com.example.design_patterns.template_method.locadoras.Locadora;
 
 import java.util.ArrayList;
 
-public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.ItemContratoViewHolder> {
-    private ItemContratoBinding binding;
+public class LocadorasAdapter extends RecyclerView.Adapter<LocadorasAdapter.ItemContratoViewHolder> {
+    private ItemLocadoraBinding binding;
     private ArrayList<Locadora> locadoras;
 
-    ContratosAdapter(ArrayList<Locadora> locadoras) {
+    LocadorasAdapter(ArrayList<Locadora> locadoras) {
         this.locadoras = locadoras;
     }
 
     @NonNull
     @Override
     public ItemContratoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        binding = ItemContratoBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        binding = ItemLocadoraBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new ItemContratoViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ItemContratoViewHolder holder, int position) {
         holder.bind(locadoras.get(position));
-        holder.binding.cvContract.setOnClickListener(new View.OnClickListener() {
+        holder.binding.cvLocadora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Todo()
@@ -44,14 +44,14 @@ public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.Item
     }
 
     class ItemContratoViewHolder extends RecyclerView.ViewHolder {
-        ItemContratoBinding binding;
-        public ItemContratoViewHolder(ItemContratoBinding binding) {
+        ItemLocadoraBinding binding;
+        public ItemContratoViewHolder(ItemLocadoraBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
         public void bind(Locadora locadora) {
-            binding.tvTituloContrato.setText(locadora.getName());
-            binding.tvDescricaoContrato.setText(locadora.getDescricao());
+            binding.tvTituloLocadora.setText(locadora.getName());
+            binding.tvDescricaoLocadora.setText(locadora.getDescricao());
         }
     }
 }

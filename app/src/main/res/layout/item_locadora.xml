@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_contract"
+        android:id="@+id/cv_locadora"
         app:cardBackgroundColor="@android:color/holo_blue_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tv_titulo_contrato"
+                android:id="@+id/tv_titulo_locadora"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -35,10 +35,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_descricao_contrato"
+                android:id="@+id/tv_descricao_locadora"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_titulo_contrato"
+                app:layout_constraintTop_toBottomOf="@id/tv_titulo_locadora"
                 tools:text="Descrição"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
