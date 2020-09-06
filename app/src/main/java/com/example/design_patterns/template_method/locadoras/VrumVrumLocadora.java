@@ -32,4 +32,14 @@ public class VrumVrumLocadora extends  Locadora{
     public String getName() {
         return "VrumVrumLocadora";
     }
+
+    @Override
+    public String getDescricao() {
+        return "Preços justos no seu aluguel.";
+    }
+
+    @Override
+    public String getAgradecimento() {
+        return "A VrumVrum agradeçe a preferência.";
+    }
 }

@@ -33,6 +33,16 @@ public class Loucarros extends Locadora {
         return "Loucarros";
     }
 
+    @Override
+    public String getDescricao() {
+        return "Não compre uma biscicleta se não souber nadar.";
+    }
+
+    @Override
+    public String getAgradecimento() {
+        return "Antes tarde do que mais tarde.";
+    }
+
     private double tentarASorte() {
         Random random = new Random();
         sorte = random.nextDouble() * random.nextInt(30);

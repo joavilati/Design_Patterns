@@ -6,6 +6,11 @@ public abstract class Locadora {
     private Carro carro;
     private double valorTotal;
     private double valorSeguro = 0;
+    protected double franquia = 0;
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
 
     public final static String TIPO_CARRO = "com.example.design_patterns.template_method.locadoras.TIPO_CARRO";
 
@@ -21,6 +26,8 @@ public abstract class Locadora {
     protected  abstract double getValorKmBase();
 
     public abstract String getName();
+    public abstract String getDescricao();
+    public abstract String getAgradecimento();
 
     public void criarContrato(int dias) {
         calcularValorKm();
@@ -29,42 +36,41 @@ public abstract class Locadora {
 
     public void inserirSeguro(){
         calcularSeguro();
-        calcularValorFranquia();
+        calcularFranquia();
     }
 
-    public double getValorFranquiaSimulado() {
-        return getCalculoFranquia();
+    public void retirarSeguro() {
+        franquia = 0;
+        valorSeguro = 0;
     }
 
-    public double getValorTotalSimulado(int dias) {
-        return getCalculoValorTotal(dias);
+    private void calcularValorTotal(int dias) {
+        this.valorTotal = (calcularValorKm() + valorSeguro) * dias;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
+    private void calcularFranquia(){
+        franquia =  getValorFranquiaBase() * carro.getMultiplicadorValorPorTipo();
+    }
+
+    protected  double calcularValorKm(){
+        return (getValorKmBase() + valorSeguro) * carro.getMultiplicadorValorPorTipo();
+    }
+
+    public double getValorSeguro() {
+        return valorSeguro;
+    }
+
+    public double getFranquia() {
+        return franquia;
     }
 
     public Carro getCarro() {
         return carro;
     }
 
-    private void calcularValorTotal(int dias) {
-        this.valorTotal = getCalculoValorTotal(dias);
+    public double getValorTotal(int dias) {
+        return valorTotal;
     }
 
-    private double getCalculoValorTotal(int dias) {
-        return carro.getValorKm() + valorSeguro * dias;
-    }
 
-    protected void calcularValorFranquia() {
-        carro.setFranquia(getCalculoFranquia());
-    }
-
-    protected double getCalculoFranquia(){
-        return getValorFranquiaBase() * carro.getMultiplicadorValorPorTipo();
-    }
-
-    protected  void calcularValorKm(){
-        carro.setValorKm((getValorKmBase() + valorSeguro) * carro.getMultiplicadorValorPorTipo());
-    }
 }

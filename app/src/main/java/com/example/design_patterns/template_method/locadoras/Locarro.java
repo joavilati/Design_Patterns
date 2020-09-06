@@ -30,6 +30,16 @@ public class Locarro extends Locadora {
         return "Locarros";
     }
 
+    @Override
+    public String getDescricao() {
+        return "Encontre aqui os melhores preços para alugueis de carro.";
+    }
+
+    @Override
+    public String getAgradecimento() {
+        return "Obrigado por Escolher a Locarros, aproveite sua viagem!";
+    }
+
     private double descontar() {
         return (descontavel)? desconto : 1;
     }
