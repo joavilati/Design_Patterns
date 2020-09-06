@@ -2,7 +2,9 @@ package com.example.design_patterns.template_method.locadoras;
 
 import com.example.design_patterns.template_method.Carro;
 
-public class VrumVrumLocadora extends  Locadora{
+import java.io.Serializable;
+
+public class VrumVrumLocadora extends Locadora implements Serializable {
 
     private double manutencao = 15;
     private double lucro = 10;

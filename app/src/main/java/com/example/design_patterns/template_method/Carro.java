@@ -1,6 +1,8 @@
 package com.example.design_patterns.template_method;
 
-public class Carro {
+import java.io.Serializable;
+
+public class Carro implements Serializable {
 
     private double multiplicadorValorPorTipo;
 

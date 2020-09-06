@@ -2,7 +2,9 @@ package com.example.design_patterns.template_method.locadoras;
 
 import com.example.design_patterns.template_method.Carro;
 
-public class Locarro extends Locadora {
+import java.io.Serializable;
+
+public class Locarro extends Locadora  implements Serializable {
 
     private boolean descontavel = true;
     private double desconto = 0.8;

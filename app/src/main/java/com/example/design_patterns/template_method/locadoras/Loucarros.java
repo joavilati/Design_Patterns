@@ -2,9 +2,10 @@ package com.example.design_patterns.template_method.locadoras;
 
 import com.example.design_patterns.template_method.Carro;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Loucarros extends Locadora {
+public class Loucarros extends Locadora implements Serializable {
     private double PrecoQueOGerenteMalucoDecidiuColocarComBaseNasVozesDaSuaCabeca = 8000.0;
     private double diasLuaEmSaturno = 50.0;
     private double sorte = -1;

@@ -2,7 +2,9 @@ package com.example.design_patterns.template_method.locadoras;
 
 import com.example.design_patterns.template_method.Carro;
 
-public abstract class Locadora {
+import java.io.Serializable;
+
+public abstract class Locadora implements Serializable {
     private Carro carro;
     private double valorTotal;
     private double valorSeguro = 0;
@@ -35,7 +37,7 @@ public abstract class Locadora {
     }
 
     public void inserirSeguro(){
-        calcularSeguro();
+        valorSeguro = calcularSeguro();
         calcularFranquia();
     }
 
@@ -67,10 +69,5 @@ public abstract class Locadora {
     public Carro getCarro() {
         return carro;
     }
-
-    public double getValorTotal(int dias) {
-        return valorTotal;
-    }
-
 
 }
