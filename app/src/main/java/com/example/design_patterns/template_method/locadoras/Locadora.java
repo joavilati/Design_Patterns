@@ -5,10 +5,10 @@ import com.example.design_patterns.template_method.Carro;
 import java.io.Serializable;
 
 public abstract class Locadora implements Serializable {
-    private Carro carro;
+    private final Carro carro;
     private double valorTotal;
-    private double valorSeguro = 0;
-    protected double franquia = 0;
+    private double valorSeguro;
+    protected double franquia;
 
     public double getValorTotal() {
         return valorTotal;
@@ -19,7 +19,6 @@ public abstract class Locadora implements Serializable {
     public Locadora(Carro carro) {
         this.carro = carro;
     }
-
 
     protected abstract double getValorFranquiaBase();
 
@@ -32,16 +31,24 @@ public abstract class Locadora implements Serializable {
     public abstract String getAgradecimento();
 
     public void criarContrato(int dias) {
+        clear();
         calcularValorKm();
         calcularValorTotal(dias);
     }
 
-    public void inserirSeguro(){
-        valorSeguro = calcularSeguro();
-        calcularFranquia();
+    private void clear() {
+        valorTotal = 0;
+        retirarSeguro();
     }
 
-    public void retirarSeguro() {
+    public void inserirSeguro(boolean inserir){
+        if(inserir){
+            valorSeguro = calcularSeguro();
+            calcularFranquia();
+        } else retirarSeguro();
+    }
+
+    private void retirarSeguro() {
         franquia = 0;
         valorSeguro = 0;
     }
@@ -54,12 +61,8 @@ public abstract class Locadora implements Serializable {
         franquia =  getValorFranquiaBase() * carro.getMultiplicadorValorPorTipo();
     }
 
-    protected  double calcularValorKm(){
+    private  double calcularValorKm(){
         return (getValorKmBase() + valorSeguro) * carro.getMultiplicadorValorPorTipo();
-    }
-
-    public double getValorSeguro() {
-        return valorSeguro;
     }
 
     public double getFranquia() {

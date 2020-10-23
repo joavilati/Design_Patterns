@@ -6,7 +6,8 @@ import java.io.Serializable;
 import java.util.Random;
 
 public class Loucarros extends Locadora implements Serializable {
-    private double PrecoQueOGerenteMalucoDecidiuColocarComBaseNasVozesDaSuaCabeca = 8000.0;
+    private double PrecoQueOGerenteDecidiuColocarComBaseNasVozesDaSuaCabeca =
+            100.0 + (10000.0 - 100.0) * new Random().nextDouble();
     private double diasLuaEmSaturno = 50.0;
     private double sorte = -1;
 
@@ -16,7 +17,7 @@ public class Loucarros extends Locadora implements Serializable {
 
     @Override
     protected double getValorFranquiaBase() {
-        return PrecoQueOGerenteMalucoDecidiuColocarComBaseNasVozesDaSuaCabeca;
+        return PrecoQueOGerenteDecidiuColocarComBaseNasVozesDaSuaCabeca;
     }
 
     @Override

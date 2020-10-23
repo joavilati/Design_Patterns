@@ -1,5 +1,6 @@
 package com.example.design_patterns.template_method;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -48,13 +49,8 @@ public class ContratoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CheckBox cb = (CheckBox) v;
-                if (cb.isChecked()) {
-                    locadora.inserirSeguro();
-                    franquia = true;
-                } else {
-                    locadora.retirarSeguro();
-                    franquia = false;
-                }
+                locadora.inserirSeguro(cb.isChecked());
+                franquia = cb.isChecked();
             }
         });
 
@@ -75,7 +71,8 @@ public class ContratoActivity extends AppCompatActivity {
     }
 
     private void sucesso() {
-        Toast.makeText(this, "Td certo!", Toast.LENGTH_SHORT).show();
+        new AlertDialog.Builder(this).setTitle(locadora.getAgradecimento()).show();
+        Toast.makeText(this, "Tudo certo!", Toast.LENGTH_SHORT).show();
     }
 
     private void criaContrato() {
@@ -101,7 +98,7 @@ public class ContratoActivity extends AppCompatActivity {
         if(franquia) {
             String valorFranquiaString = NumberFormat.getCurrencyInstance(ptBr).format(locadora.getFranquia());
             binding.tvFranquia.setText("Franquia " + valorFranquiaString);
-        }
+        } else binding.tvFranquia.setText("");
         String valorTotalString = NumberFormat.getCurrencyInstance(ptBr).format(valor);
         binding.tvValorTotal.setText(valorTotalString);
     }
