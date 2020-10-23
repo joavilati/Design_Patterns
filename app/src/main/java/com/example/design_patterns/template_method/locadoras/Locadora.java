@@ -54,7 +54,8 @@ public abstract class Locadora implements Serializable {
     }
 
     private void calcularValorTotal(int dias) {
-        this.valorTotal = (calcularValorKm() + valorSeguro) * dias;
+        double desconto = (aplicarDesconto())? 0.8:1.0;
+        this.valorTotal = ((calcularValorKm() + valorSeguro) * dias) * desconto;
     }
 
     private void calcularFranquia(){
@@ -63,6 +64,10 @@ public abstract class Locadora implements Serializable {
 
     private  double calcularValorKm(){
         return (getValorKmBase() + valorSeguro) * carro.getMultiplicadorValorPorTipo();
+    }
+
+    protected boolean aplicarDesconto() {
+        return true;
     }
 
     public double getFranquia() {

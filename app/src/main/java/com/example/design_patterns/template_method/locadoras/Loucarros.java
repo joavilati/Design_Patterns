@@ -21,6 +21,11 @@ public class Loucarros extends Locadora implements Serializable {
     }
 
     @Override
+    protected boolean aplicarDesconto() {
+        return true;
+    }
+
+    @Override
     protected double calcularSeguro() {
         return (sorte != -1) ? 2 * sorte : 2 * tentarASorte();
     }
